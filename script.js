@@ -1,11 +1,44 @@
 const gridContainer = document.querySelector('.grid-container')
+const weekDays = document.querySelector('.week-days')
+
 let count = 0
 
 for (let col = 0; col < 53; col++){
   const gridWeek = document.createElement('div')
   for (let row = 0; row < 7; row++) {
+    let div
+    if (col === 0) {
+      let text
+      div = document.createElement('div')
+      switch (row) {
+        case 0:
+          text = document.createTextNode('');
+          break
+        case 1:
+          text = document.createTextNode('Mon');
+          break
+        case 2:
+          text = document.createTextNode('');
+          break
+        case 3:
+          text = document.createTextNode('Wed');
+          break
+        case 4:
+          text = document.createTextNode('');
+          break
+        case 5:
+          text = document.createTextNode('Fri');
+          break
+        case 6:
+          text = document.createTextNode('');
+          break
+      }
+      div.className = 'grid-week-text'
+      div.appendChild(text)
+      weekDays.append(div)
+    }
     count++
-    const div = document.createElement('div')
+    div = document.createElement('div')
     div.className = 'grid-item'
     const now = new Date()
     const dayOffset = new Date(
@@ -23,9 +56,9 @@ for (let col = 0; col < 53; col++){
   gridContainer.append(gridWeek)
 }
 
-function dateFormat(d) {
-  const date = d.toString().split(' ')
-  return `${date[0]}, ${date[1]} ${date[2]}, ${date[3]}`
+function dateFormat(date) {
+  const d = date.toString().split(' ')
+  return `${d[0]}, ${d[1]} ${parseInt(d[2], 10)}, ${d[3]}`
 }
 
 function isInTheFuture(date) {
