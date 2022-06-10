@@ -11,27 +11,13 @@ for (let col = 0; col < 53; col++){
       let text
       div = document.createElement('div')
       switch (row) {
-        case 0:
-          text = document.createTextNode('');
-          break
-        case 1:
-          text = document.createTextNode('Mon');
-          break
-        case 2:
-          text = document.createTextNode('');
-          break
-        case 3:
-          text = document.createTextNode('Wed');
-          break
-        case 4:
-          text = document.createTextNode('');
-          break
-        case 5:
-          text = document.createTextNode('Fri');
-          break
-        case 6:
-          text = document.createTextNode('');
-          break
+        case 0: text = document.createTextNode(''); break
+        case 1: text = document.createTextNode('Mon'); break
+        case 2: text = document.createTextNode(''); break
+        case 3: text = document.createTextNode('Wed'); break
+        case 4: text = document.createTextNode(''); break
+        case 5: text = document.createTextNode('Fri'); break
+        case 6: text = document.createTextNode(''); break
       }
       div.className = 'grid-week-text'
       div.appendChild(text)
