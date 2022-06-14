@@ -9,10 +9,11 @@
   const monthTable = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   const monthList = []
 
-  for (let i = currentMonth; i >= 0; i--) {
+  let i
+  for (i = currentMonth; i >= 0; i--) {
     monthList.push(i)
   }
-  for (let i = 11; i > currentMonth; i--) {
+  for (i = 11; i > currentMonth; i--) {
     monthList.push(i)
   }
 
