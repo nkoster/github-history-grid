@@ -1,7 +1,31 @@
 const gridContainer = document.querySelector('.grid-container')
 const weekDays = document.querySelector('.week-days')
+const monthContainer = document.querySelector('.month-container')
 
 let count = 0
+
+const currentMonth = new Date().getMonth()
+const monthList = []
+
+for (let i = currentMonth; i >= 0; i--) {
+  monthList.push(i)
+}
+for (let i = 11; i > currentMonth; i--) {
+  monthList.push(i)
+}
+
+monthList.reverse().forEach(m => {
+  addMonthElement(m)
+})
+
+function addMonthElement(m) {
+  const monthTable = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  const month = document.createElement('div')
+  month.className = 'month'
+  const text = document.createTextNode(`${monthTable[m]}`)
+  month.appendChild(text)
+  monthContainer.append(month)
+}
 
 for (let col = 0; col < 53; col++){
   const gridWeek = document.createElement('div')
